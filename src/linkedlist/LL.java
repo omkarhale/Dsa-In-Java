@@ -16,12 +16,49 @@ public class LL {
         Node node = new Node(val);
         node.next = head;
         head = node;
-
         if (tail == null){
             tail = head;
         }
         size++;
     }
+    public void insertLast(int val){
+    Node node = new Node(val);
+    tail.next = node;
+    tail = node;
+
+    if (tail == null){
+        insertFirst(val);
+    }
+    size++;
+    }
+
+    public void insert(int val,int index){
+        if(index == 0){
+            insertFirst(val);
+            return;
+        }
+        if (index == size){
+            insertLast(val);
+            return;
+        }
+        Node temp = head;
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
+        }
+        Node node =new Node(val,temp.next);
+        temp.next = node;
+        size++;
+    }
+   public int deleteFirst(){
+    int val = head.val;
+    head = head.next;
+    if (head == null){
+        tail = null;
+    }
+    size--;
+    return val;
+   }
+
     public void display(){
       Node temp = head;
       while (temp!= null){
