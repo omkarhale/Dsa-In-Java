@@ -59,6 +59,46 @@ public class LL {
     return val;
    }
 
+    public int deleteLast() {
+
+        if (size <= 1) {
+            return deleteFirst();
+        }
+
+        Node temp = head;
+
+        // reach second last node
+        while (temp.next != tail) {
+            temp = temp.next;
+        }
+
+        int val = tail.val;   // store last value
+        tail = temp;          // update tail
+        tail.next = null;     // remove last node
+        size--;
+
+        return val;
+    }
+
+    public int delete(int index){
+        if (index == 0){
+            return deleteFirst();
+        }
+        if (index == size-1){
+            return deleteLast();
+        }
+        Node temp = head;
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
+        }
+
+        int val = temp.next.val;
+        temp.next = temp.next.next;
+        size--;
+        return val;
+    }
+
+
     public void display(){
       Node temp = head;
       while (temp!= null){
