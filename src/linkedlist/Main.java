@@ -12,8 +12,6 @@ public class Main {
             list.insertLast(58);
             list.insert(100,3);
             list.display();
-//            list.deleteFirst();
-//            list.deleteLast();
             list.delete(2);
 
             list.display();
