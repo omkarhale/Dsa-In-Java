@@ -98,6 +98,25 @@ public class LL {
         return val;
     }
 
+    public int getLength(Node head){
+        int length = 0;
+        while (head != null){
+            length++;
+            head = head.next;
+        }
+        return length;
+    }
+   public int getMiddle(){
+        Node temp = head;
+        int length = getLength(head);
+        int midIndex = length/2;
+        while (midIndex > 0){
+            temp = temp.next;
+            midIndex--;
+        }
+        return temp.val;
+    }
+
 
     public void display(){
       Node temp = head;
