@@ -19,6 +19,9 @@ public class Main {
             list.display();
             int result = list.getMiddle();
             System.out.println(result);
+
+            list.reverse();
+            list.display();
         }
 
 }

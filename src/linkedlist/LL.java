@@ -117,6 +117,22 @@ public class LL {
         return temp.val;
     }
 
+    public  Node reverseLinkedList(Node head){
+        Node curr = head;
+        Node prev = null;
+        Node next;
+        while (curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+    public void reverse() {
+        head = reverseLinkedList(head);
+    }
+
 
     public void display(){
       Node temp = head;
